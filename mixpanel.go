@@ -97,7 +97,7 @@ func (m *Mixpanel) Track(distinctId string, event string, params map[string]inte
 		params["distinct_id"] = distinctId
 	}
 	params["token"] = m.Token
-	params["mp_lib"] = "timehop/go-mixpanel"
+	params["mp_lib"] = "go-mixpanel"
 
 	data := map[string]interface{}{"event": event, "properties": params}
 	_, err := m.makeRequestWithData("GET", "track", data)
